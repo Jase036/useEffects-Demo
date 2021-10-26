@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import GlobalStyles from "./GlobalStyles";
+import styled from "styled-components";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Header from "./Header";
+import Counter from "./Counter";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyles />
+      <Wrapper>
+        <BrowserRouter>
+          <Header />
+          <Switch>
+            <Route exact path="/">
+              <HomeWrapper>
+                <h1>A poor man's Home component</h1>
+                <p>Click on Counter link to mount the counter component</p>
+                <p>Click on Home link to unmount the counter component</p>
+                <p>
+                  Look at the console.logs generated through the useEffect()
+                  functions & their returns
+                </p>
+              </HomeWrapper>
+            </Route>
+            <Route path="/counter">
+              <Counter />
+            </Route>
+          </Switch>
+        </BrowserRouter>
+      </Wrapper>
+    </>
   );
 }
 
+const Wrapper = styled.div`
+  height: 100%;
+  width: 100%;
+  /* border: solid tomato; */
+`;
+
+const HomeWrapper = styled.article`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+`;
 export default App;
