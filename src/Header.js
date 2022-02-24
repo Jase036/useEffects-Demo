@@ -17,7 +17,7 @@ const Wrapper = styled.header`
   align-items: center;
   height: 60px;
   gap: 16px;
-  border: solid lime;
+  border-bottom: 2px solid blue;
 `;
 
 export default Header;

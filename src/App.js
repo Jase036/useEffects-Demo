@@ -14,7 +14,7 @@ function App() {
           <Switch>
             <Route exact path="/">
               <HomeWrapper>
-                <h1>A poor man's Home component</h1>
+                <h1>Home component</h1>
                 <p>Click on Counter link to mount the counter component</p>
                 <p>Click on Home link to unmount the counter component</p>
                 <p>
@@ -36,10 +36,10 @@ function App() {
 const Wrapper = styled.div`
   height: 100%;
   width: 100%;
-  /* border: solid tomato; */
+  
 `;
 
-const HomeWrapper = styled.article`
+const HomeWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
