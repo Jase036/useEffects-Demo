@@ -31,12 +31,11 @@ const App = () => {
       </Wrapper>
     </>
   );
-}
+};
 
 const Wrapper = styled.div`
-  height: 100%;
+  height: 500vh;
   width: 100%;
-  
 `;
 
 const HomeWrapper = styled.div`

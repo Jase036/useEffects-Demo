@@ -11,28 +11,28 @@ const Counter = () => {
 
   useEffect(() => {
     console.log(
-      "useEffect with Empty [], useEffect starts. Counter Component is mounted (1st render)"
+      "useEffect with Empty [], useEffect MOUNT. Counter Component is mounted (1st render)"
     );
 
     return () => {
       console.log(
-        "useEffect with Empty [], useEffect return. Counter Component is unmounted"
+        "useEffect with Empty [], useEffect RETURN. Counter Component is unmounted"
       );
     };
   }, []);
 
   // Dependency array with the dependency "count1" only
   // runs on when component is mounted (1st render) & anytime count1 updates (not count 2)
-  // return function runs when right before component is unmounted or right before count1 updated
+  // return function runs when right before component is unmounted or right before count1 is updated
 
   useEffect(() => {
     console.log(
-      "useEffect with [count1], useEffect start. Counter Component is mounted (1st render and updates)"
+      "useEffect with [count1], useEffect MOUNT & UPDATE. Counter Component is mounted (1st render and updates)"
     );
 
     return () => {
       console.log(
-        "useEffect with [count1], useEffect return. Right before Counter Component is updated/unmounted"
+        "useEffect with [count1], useEffect RETURN. Right before Counter Component is updated/unmounted"
       );
     };
   }, [count1]);
@@ -43,18 +43,18 @@ const Counter = () => {
 
   useEffect(() => {
     console.log(
-      "useEffect with NO [], useEffect starts. Counter Component is mounted/updated (1st render and updates)"
+      "useEffect with NO [], useEffect MOUNT & UPDATE. Counter Component is mounted/updated (1st render and updates)"
     );
 
     return () => {
       console.log(
-        "useEffect with NO [], useEffect returns. Right before Counter Component is updated/unmounted"
+        "useEffect with NO [], useEffect RETURN. Right before Counter Component is updated/unmounted"
       );
     };
   });
 
-  const handleClick = (count, setCount) => {
-    setCount(count + 1);
+  const handleClick = (countState, setCountState) => {
+    setCountState(countState + 1);
   };
 
   return (
