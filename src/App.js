@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Header from "./Header";
 import Counter from "./Counter";
 
-function App() {
+const App = () => {
   return (
     <>
       <GlobalStyles />
